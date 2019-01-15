@@ -1,5 +1,6 @@
 var https = require('https');
 
+// can take in any url via host/path
 function getAndPrintHTML(url) {
   https.get(url, function(response) {
     if (response.statusCode != 200) {
@@ -36,27 +37,5 @@ var pageNumbers = [1,2,3].forEach(function(number) {
   var url = 'https://sytantris.github.io/http-examples/step' + number + '.html';
   getAndPrintHTML(url)
 });
-
-
-
-// var requestOptions = {
-//   host: 'sytantris.github.io',
-//   path: '/http-examples/step3.html'
-// };
-
-
-
-// function getAndPrintHTML (options) {
-//   var body = '';
-//     response.setEncoding('utf8');
-//     response.on('data', function(chunk) {
-//       body += chunk;
-//       console.log('Chunk Received. Length:', data.length);
-//   });
-//     response.on('end', function (data) {
-//       console.log(data);
-//       callback(null, body);
-// }
-
 
 
